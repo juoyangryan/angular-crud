@@ -1,0 +1,27 @@
+<p>home works!</p>
+<button type="button" class="btn btn-primary">logout</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let product of products">
+        <td>
+            {{ product.ID }}
+        </td>
+        <td>
+            {{ product.ProductName }}
+        </td>
+        <td>
+            {{ product.ProductDescription }}
+        </td>
+        <td>
+            <button class="btn btn-primary" (click)="handleDelete(product.ID)">Delete</button>
+        </td>
+    </tr>
+</table>
