@@ -76,5 +76,20 @@ export class AuthService {
       }
     });
   }
+
+  updateProduct(ID: number, productName: string, productDescription: string) {
+    
+    // should use injector but short on time
+    let token = localStorage.getItem("access_token");
+    return this.http.put(`https://localhost:44366/api/values/${ID}`, {
+      ID: ID, 
+      ProductName: productName, 
+      ProductDescription: productDescription
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  }
   
 }

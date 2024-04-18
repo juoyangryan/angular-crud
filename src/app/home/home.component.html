@@ -1,5 +1,5 @@
 <p>home works!</p>
-<button type="button" class="btn btn-primary">logout</button>
+<button type="button" class="btn btn-primary" (click)="logout()">logout</button>
 
 <table class="table table-striped">
     <thead>
@@ -25,3 +25,42 @@
         </td>
     </tr>
 </table>
+
+<form [formGroup]="addForm">
+    <fieldset>
+        <legend>Add Product</legend>
+        <div class="form-field">
+            <label>Product Name:</label>
+            <input name="productName" formControlName="productName">
+        </div>
+        <div class="form-field">
+            <label>Product Description:</label>
+            <input name="productDescription" formControlName="productDescription">
+        </div>
+    </fieldset>
+    <div class="form-buttons">
+        <button class="bth btn-primary" (click)="handleAdd()">Add Product</button>
+    </div>
+</form>
+<br />
+
+<form [formGroup]="updateForm">
+    <fieldset>
+        <legend>Update Product by ID</legend>
+        <div class="form-field">
+            <label>ID:</label>
+            <input name="Id" formControlName="Id">
+        </div>
+        <div class="form-field">
+            <label>Product Name:</label>
+            <input name="productName" formControlName="productName">
+        </div>
+        <div class="form-field">
+            <label>Product Description:</label>
+            <input name="productDescription" formControlName="productDescription">
+        </div>
+    </fieldset>
+    <div class="form-buttons">
+        <button class="bth btn-primary" (click)="handleUpdate()">Update Product</button>
+    </div>
+</form>
